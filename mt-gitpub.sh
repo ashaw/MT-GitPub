@@ -1,9 +1,11 @@
 #!/bin/bash
-# mt-rebuild-gitconfig.sh
+
+# MT-GitPub
+# by Al Shaw <almshaw@gmail.com> http://www.shhhaw.com
 
 # requires mt-rebuild http://appnel.com/code/mt-rebuild
-# whereis mt-rebuild
-# mt-rebuild="/var/www/vhosts/shhhaw.com/cgi-bin/mt/mt-rebuild.pl"
+# whereis mt-rebuild?
+#mt-rebuild="/var/www/vhosts/shhhaw.com/cgi-bin/mt/mt-rebuild.pl"
 
 #initialize config file. customize config.sh
 
@@ -31,7 +33,7 @@ CURDIR=`pwd`
 
 cd $GITDIR
 
-#use committed files 
+#use modified or committed files?
 
 if [ $trackmode = modified ];
 	then
@@ -43,15 +45,6 @@ if [ $trackmode = modified ];
 		fi
 fi
 
-#unless you want to publish modified files. use -m
-#while getopts "m" MODIFIED
-#do
-#	case $MODIFIED in
-#		m)
-#			changedfiles=$(git status | grep modified)
-#		;;
-#	esac
-#done
 
 changedfilesarr=( `echo $changedfiles` )
 
@@ -60,13 +53,15 @@ changedfilesarr=( `echo $changedfiles` )
 for file in ${changedfilesarr[@]}
 do
 	for indexfile in ${index[@]}
-		do
 		
+		do		
 			if [ "X$indexfile" = "X$file" ]
 				then
 				 echo "i will publish $indexfile which is an index template"
+				 #`perl $mt-rebuild -mode="index" -blog_id="$blog_id" -template="your template name"`
 			fi
 		
 		done
 				
 done
+
