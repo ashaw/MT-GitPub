@@ -50,17 +50,19 @@ changedfilesarr=( `echo $changedfiles` )
 
 #check to see if we want to publish any index templates
 
+
 for file in ${changedfilesarr[@]}
 do
-	for indexfile in ${index[@]}
+	for indexfile in ${indextmpl[@]}
 		
-		do		
+		do
 			if [ "X$indexfile" = "X$file" ]
 				then
-				 echo "i will publish $indexfile which is an index template"
+				 echo "i will publish $indexfile (index template) ($trackmode)"
+				 
 				 #`perl $mt-rebuild -mode="index" -blog_id="$blog_id" -template="your template name"`
 			fi
-		
+			
 		done
 				
 done

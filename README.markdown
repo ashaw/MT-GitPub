@@ -2,11 +2,13 @@
 
 ## Installation
 
-Download and install mt-rebuild if you haven't already. Download mt-gitpub and `chmod +x mt-gitpub.sh`. Open mt-gitpub.sh and fill in the path to mt-rebuild. Open config.sh and fill in paths to your Git repo and your blog id. Fill in the index and archive arrays with your template filenames. 
+Download and install mt-rebuild if you haven't already. Download mt-gitpub and `chmod +x mt-gitpub.sh`. Open mt-gitpub.sh and fill in the path to mt-rebuild. Open config.sh and fill in paths to your Git repo and your blog id. Fill in the index and archive arrays with your template filenames. I recommend setting up multiple config files for each blog you work on. 
 
 ## Usage
 
-By default, MT-GitPub will look for config.sh in the same directory and publish last-committed files. However, there are options:
+To run in default mode, run `mt-gitpub.sh`.
+
+By default, MT-GitPub will look for config.sh in the same directory and publish last-committed index templates. However, there are options:
 
 Use an alternate config file `-c [configfilename.sh]`
 
@@ -22,3 +24,8 @@ Publish last modified files rather than last committed `-m`
 
 * get into git post-commit hooks
 
+## Me
+
+Al Shaw
+
+http://www.shhhaw.com

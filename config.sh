@@ -10,15 +10,27 @@ GITDIR=/Applications/MAMP/htdocs/git/mt-shhhaw-theme
 
 blog_id="1"
 
-# define index templates and archive templates
+# define index templates and archive templates like so
+# 
+# indextmpl=(
+#	templatefilename
+#   template title in MT
+#	[...]
+#  )
+#
 
-index=(
+indextmpl=(
 
-index.mtml 
-style.css 
-atom.mtml 
+index.mtml
+index
+style.css
+styles
+atom.mtml
+atom
 the-archive.mtml 
+full archive
 module-head.mtml
+header module
 
 )
 
