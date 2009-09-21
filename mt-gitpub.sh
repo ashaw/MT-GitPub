@@ -29,7 +29,7 @@ while getopts "c:m" OPTION
 
 # get our mt files
 files=$(awk "/indextmpl/ {print $2}" /Applications/MAMP/htdocs/git/mt-gitpub/config.sh)
-mtfilesarr=( `echo $files` ) 
+mtfilesarr=( `echo $files` )
 
 # get our changed files on last commit, and store in an array
 
