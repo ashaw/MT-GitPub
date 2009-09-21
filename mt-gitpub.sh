@@ -8,7 +8,7 @@
 # requires mt-rebuild http://appnel.com/code/mt-rebuild
 # Where is mt-rebuild?
 #
-#mt-rebuild="/var/www/vhosts/shhhaw.com/cgi-bin/mt/mt-rebuild.pl"
+mt-rebuild="/var/www/vhosts/shhhaw.com/cgi-bin/mt/mt-rebuild.pl"
 #
 ######
 
@@ -76,8 +76,7 @@ do
 			if [ "X$mtfile" = "X$file" ]
 				then
 				 echo "i will publish $file ($filename) (index template) ($trackmode)"
-				 
-				 #`perl $mt-rebuild -mode="index" -blog_id="$blog_id" -template="your template name"`
+				 perl $mt-rebuild -mode="index" -blog_id="$blog_id" -template="$filename"
 			fi
 			
 		done

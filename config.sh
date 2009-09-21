@@ -1,7 +1,7 @@
 #mt-gitpub config
 
 # git directory of blog you want to track
-GITDIR=/Applications/MAMP/htdocs/git/mt-shhhaw-theme
+GITDIR=/var/www/mt-shhhaw-theme-working
 
 # define blog id
 # blog_id="1"
@@ -19,10 +19,3 @@ blog_id="1"
 #indextmpl atom.mtml atom
 #indextmpl the-archive.mtml full archive
 #indextmpl module-head.mtml header module
-
-archive=(
-
-entry.mtml 
-page.mtml
-
-)
