@@ -27,6 +27,10 @@ while getopts "c:m" OPTION
 		esac
 	done
 
+# get our mt files
+files=$(awk "/indextmpl/ {print $2}" /Applications/MAMP/htdocs/git/mt-gitpub/config.sh)
+mtfilesarr=( `echo $files` ) 
+
 # get our changed files on last commit, and store in an array
 
 CURDIR=`pwd`
@@ -53,12 +57,15 @@ changedfilesarr=( `echo $changedfiles` )
 
 for file in ${changedfilesarr[@]}
 do
-	for indexfile in ${indextmpl[@]}
+	for mtfile in ${mtfilesarr[@]}
 		
 		do
-			if [ "X$indexfile" = "X$file" ]
+			#filename=$(awk '/$mtfile/ {print $3}' config.sh)
+			filename=`awk '/'"$mtfile"'/ {print $3}' /Applications/MAMP/htdocs/git/mt-gitpub/config.sh`
+
+			if [ "X$mtfile" = "X$file" ]
 				then
-				 echo "i will publish $indexfile (index template) ($trackmode)"
+				 echo "i will publish $file ($filename) (index template) ($trackmode)"
 				 
 				 #`perl $mt-rebuild -mode="index" -blog_id="$blog_id" -template="your template name"`
 			fi
