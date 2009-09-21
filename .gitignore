@@ -1,2 +1,3 @@
-.config-dummy.sh
-.greptests.sh
+.DS_Store
+config-dummy.sh
+greptests.sh
