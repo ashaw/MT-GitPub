@@ -1,15 +1,21 @@
 #!/bin/bash
 
 # MT-GitPub
-# by Al Shaw <almshaw@gmail.com> http://www.shhhaw.com
+# Copyright 2009 Al Shaw <almshaw@gmail.com> http://www.shhhaw.com
+# GPL v3 http://www.gnu.org/copyleft/gpl.html
 
+#####
 # requires mt-rebuild http://appnel.com/code/mt-rebuild
-# whereis mt-rebuild?
+# Where is mt-rebuild?
+#
 #mt-rebuild="/var/www/vhosts/shhhaw.com/cgi-bin/mt/mt-rebuild.pl"
+#
+######
 
 #initialize config file. customize config.sh
 
-source $(dirname $0)/config.sh
+configfile=$(dirname $0)/config.sh
+source $configfile
 trackmode=committed
 
 # OPTIONS
@@ -20,7 +26,8 @@ while getopts "c:m" OPTION
 	do	
 		case $OPTION in
 			c)
-				source $(dirname $0)/$OPTARG
+				configfile=$(dirname $0)/$OPTARG
+				source $configfile
 			;;
 			m)	trackmode=modified
 			;;
@@ -28,7 +35,7 @@ while getopts "c:m" OPTION
 	done
 
 # get our mt files
-files=$(awk "/indextmpl/ {print $2}" /Applications/MAMP/htdocs/git/mt-gitpub/config.sh)
+files=$(awk '/indextmpl/ {print $2}' $configfile)
 mtfilesarr=( `echo $files` )
 
 # get our changed files on last commit, and store in an array
@@ -52,6 +59,10 @@ fi
 
 changedfilesarr=( `echo $changedfiles` )
 
+# change back to curdir
+
+cd $CURDIR
+
 #check to see if we want to publish any index templates
 
 
@@ -60,8 +71,7 @@ do
 	for mtfile in ${mtfilesarr[@]}
 		
 		do
-			#filename=$(awk '/$mtfile/ {print $3}' config.sh)
-			filename=`awk '/'"$mtfile"'/ {print $3}' /Applications/MAMP/htdocs/git/mt-gitpub/config.sh`
+			filename=`awk '/'"$mtfile"'/ {print $3}' "$configfile"`
 
 			if [ "X$mtfile" = "X$file" ]
 				then
