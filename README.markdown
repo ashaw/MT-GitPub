@@ -20,8 +20,6 @@ Right now, MT-GitPub only supports index templates.
 
 ## To Do
 
-* add support for multi-word template titles
-
 * add support for archive templates
 
 * options -- only archives/only indexes

@@ -6,10 +6,8 @@
 
 #####
 # requires mt-rebuild http://appnel.com/code/mt-rebuild
-# Put mt-rebuild in your mt directory, then provide the path
-#
-mtrebuild="/var/www/vhosts/shhhaw.com/cgi-bin/mt/mt-rebuild.pl"
-#
+# Put mt-rebuild in config.sh
+# Create fill out config.sh before running this script.
 ######
 
 #initialize config file. customize config.sh
@@ -71,7 +69,7 @@ do
 	for mtfile in ${mtfilesarr[@]}
 		
 		do
-			filename=`awk '/'"$mtfile"'/ {for(i=3;i<=NF;i++){printf("%s ", $i)}}' "$configfile"`
+			filename=`awk '/'"$mtfile"'/ {for(i=3;i<=(NF-1);i++){printf("%s ", $i)}print($NF)}' "$configfile"`
 
 			if [ "X$mtfile" = "X$file" ]
 				then
