@@ -16,11 +16,17 @@ Use an alternate config file `-c [configfilename.sh]`
 
 Publish last modified files rather than last committed `-m`
 
+Right now, MT-GitPub only supports index templates.
+
 ## To Do
+
+* add support for multi-word template titles
 
 * add support for archive templates
 
 * options -- only archives/only indexes
+
+* create an easy config process that builds config.sh from mt database
 
 * hook into mt-rebuild
 
@@ -29,6 +35,8 @@ Publish last modified files rather than last committed `-m`
 ## Bugs
 
 * Template lists in config.sh interpreted as commands if left uncommented
+
+* Errors on template modules (no output file)
 
 ## License
 

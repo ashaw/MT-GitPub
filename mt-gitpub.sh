@@ -6,7 +6,7 @@
 
 #####
 # requires mt-rebuild http://appnel.com/code/mt-rebuild
-# Where is mt-rebuild?
+# Put mt-rebuild in your mt directory, then provide the path
 #
 mtrebuild="/var/www/vhosts/shhhaw.com/cgi-bin/mt/mt-rebuild.pl"
 #
@@ -71,7 +71,7 @@ do
 	for mtfile in ${mtfilesarr[@]}
 		
 		do
-			filename=`awk '/'"$mtfile"'/ {print $3}' "$configfile"`
+			filename=`awk '/'"$mtfile"'/ {for(i=3;i<=NF;i++){printf("%s ", $i)}}' "$configfile"`
 
 			if [ "X$mtfile" = "X$file" ]
 				then
