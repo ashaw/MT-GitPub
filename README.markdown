@@ -4,7 +4,7 @@ MT-GitPub is a bridge between Git and Tim Appnel's [mt-rebuild](http://appnel.co
 
 ## Installation
 
-Download and install mt-rebuild if you haven't already. Download mt-gitpub and `chmod +x mt-gitpub.sh`. Open mt-gitpub.sh and fill in the path to mt-rebuild. Open config.sh and fill in paths to your Git repo and your blog id. Make a list of your templates according to the example (leave these lines commented to avoid runtime errors). I recommend setting up multiple config files for each blog you work on and calling them with `-c`. 
+Download and install mt-rebuild if you haven't already. Download mt-gitpub and `chmod 700 mt-gitpub.sh`. Rename config-sample.sh to config.sh and fill in paths to mt-rebuild, your Git repo and your blog id. Make a list of your templates according to the example (leave these lines commented to avoid runtime errors). I recommend setting up multiple config files for each blog you work on and calling them with `-c`. 
 
 ## Usage
 
@@ -12,7 +12,7 @@ To run in default mode, run `mt-gitpub.sh`.
 
 By default, MT-GitPub will look for config.sh in the same directory and publish last-committed index templates. However, there are options:
 
-Use an alternate config file `-c [configfilename.sh]`
+Use an alternate config file `-c [configfilename]`
 
 Publish last modified files rather than last committed `-m`
 
@@ -38,11 +38,6 @@ Right now, MT-GitPub only supports index templates.
 
 ## License
 
-Copyright 2009 Al Shaw
+Copyright 2009 Al Shaw http://www.shhhaw.com
+
 [GPL v3](http://www.gnu.org/copyleft/gpl.html)
-
-## Me
-
-Al Shaw
-
-http://www.shhhaw.com

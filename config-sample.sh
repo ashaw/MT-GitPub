@@ -24,8 +24,6 @@ blog_id="1"
 # #indextmpl filename template title
 #
 
-#indextmpl index.mtml index
+#indextmpl index.mtml main index
 #indextmpl style.css style
 #indextmpl atom.mtml atom
-#indextmpl the-archive.mtml full archive
-#indextmpl module-head.mtml head

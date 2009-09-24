@@ -6,8 +6,7 @@
 
 #####
 # requires mt-rebuild http://appnel.com/code/mt-rebuild
-# Put mt-rebuild in config.sh
-# Create fill out config.sh before running this script.
+# Create & fill out config.sh (or rename and modify config-sample.sh) before running this script.
 ######
 
 #initialize config file. customize config.sh

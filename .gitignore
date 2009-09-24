@@ -3,3 +3,4 @@ config-dummy.sh
 greptests.sh
 config-dummy
 dummy-config.sh
+config.sh
