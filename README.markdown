@@ -8,7 +8,7 @@ Download and install mt-rebuild if you haven't already. Download mt-gitpub and `
 
 ## Usage
 
-To run in default mode, run `mt-gitpub.sh`.
+To run in default mode, run `bash mt-gitpub.sh`.
 
 By default, MT-GitPub will look for config.sh in the same directory and publish last-committed index templates. However, there are options:
 
@@ -25,8 +25,6 @@ Right now, MT-GitPub only supports index templates.
 * options -- only archives/only indexes
 
 * create an easy config process that builds config.sh from mt database
-
-* hook into mt-rebuild
 
 * get into git post-commit hooks
 
