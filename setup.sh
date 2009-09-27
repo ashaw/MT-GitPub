@@ -44,5 +44,8 @@ echo "" >> $configfilename
 
 echo "blog_id=\"$blog_id\"" >> $configfilename
 
-echo "select template_linked_file, template_name from mt_template where template_type='index' AND template_blog_id='$blog_id'" | mysql -u $usr -p$pw $db | tail -n+2 | awk '{print "#indextmpl " $1, $2, $3}' >> $configfilename
+echo "select template_linked_file, template_name from mt_template where template_type='index' AND template_blog_id='$blog_id'" | mysql -u $usr -p$pw $db | tail -n+2 | awk '{gsub(/^.*\//, "", $1); print "#indextmpl "  $1, $2, $3}' >> $configfilename
 
+echo "***** your config file ($configfilename) *****"
+
+cat $configfilename
