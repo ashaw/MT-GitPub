@@ -4,3 +4,4 @@ greptests.sh
 config-dummy
 dummy-config.sh
 config.sh
+tables.txt
