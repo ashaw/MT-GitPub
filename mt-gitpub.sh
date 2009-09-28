@@ -14,12 +14,14 @@
 configfile=$(dirname $0)/config.sh
 source $configfile
 trackmode=committed
+setup=off
 
 # OPTIONS
-# alternate config file						-c alt-config.sh
+# alternate config file						-c altconfigfilename
 # use modified instead of committed			-m 
+# setup mode								-s newconfigfilename
 
-while getopts "c:m" OPTION
+while getopts "c:s:m" OPTION
 	do	
 		case $OPTION in
 			c)
@@ -28,8 +30,20 @@ while getopts "c:m" OPTION
 			;;
 			m)	trackmode=modified
 			;;
+			s)
+				setup=on
+				configfilename=$OPTARG
+			;;
 		esac
 	done
+	
+#if we're in setup mode, run setup.sh and then quit
+
+if [ $setup = on ];
+	then
+		source setup.sh
+		exit
+fi
 
 # get our mt files
 files=$(awk '/indextmpl/ {print $2}' $configfile)
